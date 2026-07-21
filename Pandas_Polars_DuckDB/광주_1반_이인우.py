@@ -48,7 +48,7 @@ missing_columns = REQUIRED_COLUMNS - set(df.columns)
 if missing_columns:
     raise SystemExit(f"필수 컬럼이 없습니다: {missing_columns}")
 
-# amount에 숫자로 변환할 수 없는 값이 있으면 NaN 처리 (비수치 데이터 방어)
+# amount에 숫자로 변환할 수 없는 값이 있으면 NaN 처리
 df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
 
 print("상위 5행")
